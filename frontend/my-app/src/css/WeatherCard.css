@@ -1,0 +1,72 @@
+.currentday-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.description {
+    font-size: 18px;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.weathericon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weathericon img {
+    width: 180px;
+}
+
+.temperature {
+    font-size: 96px;
+    color: var(--dark);
+    position: relative;
+}
+
+.degree {
+    font-size: 36px;
+    color: var(--dark);
+    position: absolute;
+    top: 20px;
+}
+
+.feelslike {
+    font-size: 24px;
+    color: var(--light-2);
+}
+
+.infomatics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 4rem;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark);
+    font-size: 20px;
+}
+
+.icon {
+    font-size: 26px;
+    color: var(--dark);
+    margin-right: 1rem;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark);
+    font-size: 20px;
+}
