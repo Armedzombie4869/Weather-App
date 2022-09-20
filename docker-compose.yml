@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+  auth:
+    image: armedzombie/auth
+    ports:
+      - 4000:4000
+    environment:
+      MONGODB_SERVER: "mongodb://db:27017/passport-jwt"
+  apiservice:
+    image: armedzombie/apiservice
+    ports:
+      - 8000:8000
+  weatherapp:
+    image: armedzombie/weather-app
+    ports:
+      - 3000:3000
