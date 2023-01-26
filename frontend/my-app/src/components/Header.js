@@ -6,7 +6,8 @@ import config from './config';
 export default function Header() {
     const [user,setUser] = useState(null);
   useEffect(()=> {
-   const token = localStorage.getItem('token');
+    if(localStorage.length!==0){
+        const token = localStorage.getItem('token');
    axios.get(`${config.authURL}profile`,{headers: {
     Authorization: token
    }}).then(res =>{
@@ -14,6 +15,8 @@ export default function Header() {
    }).catch(err => {
     console.log(err);
    })
+    }
+   
     
   },[]);
    
@@ -43,7 +46,7 @@ export default function Header() {
 
                     ) : (<>
                         <li className="nav-item">
-                            <a className="nav-link">Welcome {user?.firstname} {user?.lastname}</a>
+                            <a href="/" className="nav-link">Welcome {user?.firstname} {user?.lastname}</a>
                             
                         </li>
                         <li className="nav-item">

@@ -23,6 +23,23 @@ export default function Search() {
         
     }, [city])
 
+    useEffect(()=> {
+        if(localStorage.length !== 0) {
+            const token = localStorage.getItem('token');
+            axios.get(`${config.authURL}profile`,{headers: {
+                Authorization: token
+               }}).then(res =>{
+                console.log(res)
+                setCity(res.data.user.city);
+               //  setUser(res.data.user);
+               }).catch(err => {
+                console.log(err);
+               //  navigate('/login');
+        })
+        }
+    
+       },[]);
+
 
     function sendCity() {
         setCity(input);

@@ -3,7 +3,7 @@ const repo = require('../repository/WeatherRepository');
 
 function GetWeather(req,res){
     repo.GetWeather(req.params.city).then(data => {
-        res.send(data);
+        return res.send(data);
     });
 }
 
